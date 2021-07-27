@@ -1,39 +1,32 @@
-#ifndef HOLBERTON_H
-#define HOLBERTON_H
+#ifndef _HOLBERTON_H_
+#define _HOLBERTON_H_
+
 #include <stdarg.h>
 /**
- * struct mystr - pointer to function with corresponding letter
- * @letter: specifier
- * @func: print argument
+ * struct print - structure for printing various types
+ * @t: type to print
+ * @f: function to print
  */
-typedef struct mystr
+typedef struct print
 {
-	char *letter;
-	int (*func)(va_list);
-} mystr;
+	char *t;
+	int (*f)(va_list);
+} print_t;
+
 int _putchar(char c);
 int _printf(const char *format, ...);
-int(*getspecifier(const char *format, int i))(va_list);
-/** fn in file : fn_char.c */
 int print_c(va_list c);
 int print_s(va_list s);
+int print_i(va_list i);
+int print_d(va_list d);
+int print_u(va_list u);
+int print_b(va_list b);
+int print_o(va_list o);
+int print_x(va_list x);
+int print_X(va_list X);
+int print_p(va_list p);
 int print_S(va_list S);
-int print_rs(va_list rs);
-int print_rot(va_list ro);
-/** fn in file : fn_numbers.c */
-int _print_i(va_list vi);
-int _print_b(va_list b);
-/** fn in file : fn_uoxX.c */
-int _print_u(va_list);
-int _print_o(va_list);
-int _print_x(va_list);
-int _print_X(va_list);
-int _print_p(va_list);
+int print_r(va_list r);
+int print_R(va_list R);
 
-int strange(const char *format, int i);
-int _plus_i(va_list);
-int _space_i(va_list);
-int _diez_o(va_list);
-int _diez_x(va_list);
-int _diez_X(va_list);
-#endif
+#endif  /* _HOLBERTON_H */

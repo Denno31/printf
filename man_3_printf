@@ -1,58 +1,71 @@
-./"This is the manpage of the _printf project in Holberton School
-.TH _PRINTF 3 "29 October 2019" "0.10" "_printf man page"
-
+.\" Manpage for printf.
+.\" Contact 1096@holbertonschool.com or
+1149@holbertonschool.com to correct errors.
+.TH _printf 3 "28 October 2019" "1.0" "Printf Program Manual"
 .SH NAME
-.B _printf
-- Formatted output conversion.
-.SH SYNOPSIS
-.B #include "holberton.h"
-.B int _printf(const char *
-.I format
-.B , ...)
-
-.SH DESCRIPTION
-.B _printf()
-Prints to standard output the
-.B format
-string, interpreting
-.B ‘%’
-directives to format numeric and string arguments in a way that is mostly similar to the
-.B C ‘printf’ function.
-.SH The conversion specifiers
-.IP %%
-prints a single %
-.IP %c
-prints the next argument of type Char (int argument is converted to a character)
-.IP %s
-prints the next argument of type Char * // pointer to a string
-.IP %i OR %d
-prints the next argument of type int
-.IP %b
-The unsigned int argument is converted to unsigned binary notation then printed
-.IP %u
-The unsigned int argument is converted to unsigned decimal notation then printed
-.IP %o
-The unsigned int argument is converted to unsigned octal notation then printed
-.IP %x
-The unsigned int argument is converted to unsigned lowercase hexadecimal notation then printed
-.IP %X
-The unsigned int argument is converted to unsigned uppercase hexadecimal notation then printed
-.IP %S
-Prints a string. Non printable characters are printed as "\x" followed by their ASCII values in two digit hexadecimal
-.IP %r
-prints the reversed string
-.IP %R
-prints the Rot13'ed string
-.IP %p
-Address is printed in hexadecimal
-.PP NOTE: a single % at the end of FORMAT string is interpreted as error.
-.PP NOTE: a single % followed by unknown specifier is not interpreted.
-.SH RETURN VALUE
-.B _printf
-returns the number of printed characters.
-.SH SEE ALSO
-.I printf(3)
-.SH BUGS
-No known bugs.
-.SH AUTHOR
-Taieb Chaabini, Mariem Matri
+ _printf - function made by Holberton way
+ .SH SYNOPSIS
+ .BI _printf(const char *format, ...)
+ .PP
+ .B #include <stdarg.h>
+ .PP
+ .B int _printf(const char *format, ...);
+ .PP
+ .B int _putchar(char c);
+ .PP
+ .B int CharacterCase(va_list arg);
+ .PP
+ .B int StringCase(va_list arg);
+ .PP
+ .B int DecimalCase(va_list arg);
+ .PP
+ .B int IntegerCase(va_list arg);
+ .PP
+ .B int OctCase(va_list arg);
+ .PP
+ .B int UnsignedCase(va_list arg);
+ .PP
+ .B int BinaryCase(va_list arg);
+ .PP
+ .SH DESCRIPTION
+ printf function produces output according to a format as described below.PP
+ .PP
+ .SH Format .br
+ .br
+ .PP
+ The function takes parameters to generate the output, first character case that
+ invoques the function to define the process to do, in this case represents the
+ data type to print in console; the next is one or more parameters,
+ they are variable names. Then, call the corresponding function for each case
+ (char, string, integer, float, double, hex)
+ .br
+ .SH Format specifiers
+ .TP
+ .B c
+ .R prints a single character.
+ .TP
+ .B s
+ .R prints a string teating it like a array of characters.
+ .TP
+ .B d
+ .R prints a decimal number an also a big integer.
+ .TP
+ .B i
+ .R prints an integer number.
+ .TP
+ .B o
+ .R converts a number in octal and then print it.
+ .TP
+ .B u
+ .R prints the unsigned case.
+ .TP
+ .B b
+ .R converts a number in a binary and then print it.
+ .SH SEE ALSO
+ .R printf(3) printf
+ .SH BUGS
+ All you can imagine maybe a bug.
+ .SH AUTHOR
+ Jose Díaz and Faber Andres Ruiz
+ (1194@holbertonschool.com - 1096@holbertonschool.com)
+ 
